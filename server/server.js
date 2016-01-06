@@ -26,8 +26,8 @@ server.listen(config.port, config.ip, function () {
   console.log(
     chalk.white('\tExpress server') +
     chalk.red(' listening on port ')
-    + chalk.yellow('%d')
-    + chalk.red(', in ')
+    + chalk.yellow('%s')
+    + chalk.red(' in ')
     + chalk.yellow('%s')
     + chalk.red(' mode.'),
     config.port,
