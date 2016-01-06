@@ -40,6 +40,23 @@ server.listen(config.port, config.ip, function () {
 
   console.timeEnd('\tloaded in');
   console.log('------------------------------------------------------------------------------------------------\n');
+
+  var __slice = [].slice;
+  var moment = require('moment');
+  var log = console.log;
+  console.log = console.info = function(){
+    var args = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
+    var start = '';
+    if(args[0].indexOf && args[0].indexOf('[') === 0) {
+      start = args.shift();
+    }
+    var msg = require('util').format.apply(this, args);
+    var now = new moment();
+    log.call(this, chalk.white('[') + chalk.grey(now.format("YYYY-MMM-DD HH:mm:ss.SSS")) + chalk.white(']'), chalk.yellow(start), msg);
+  };
+
 });
+
+
 
 module.exports = server;

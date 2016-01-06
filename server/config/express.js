@@ -22,7 +22,16 @@ module.exports = function (app) {
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(bodyParser.json());
   app.use(compression());
-  app.use(morgan('dev'));
+  app.use(function(req, res, next){
+    var chalk = require('chalk');
+    if(req.method !== 'GET') {
+      console.info(''
+        , chalk.yellow(req.method)
+        , chalk.red(req.url)
+      );
+    }
+    next();
+  });
   app.use(passport.initialize());
   app.use(express.static(path.join(config.root, 'client')));
   app.set('appPath', 'client');

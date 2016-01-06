@@ -20,6 +20,7 @@ exports.isAuthenticated = function () {
       User.findById(req.user._id, function (err, user) {
         if (err) { return next(err); }
         if (!user) { return res.send(401); }
+        console.info('[USER]', user.email);
         req.user = user;
         next();
       });

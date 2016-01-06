@@ -15,7 +15,6 @@ function handleError(res, err) {
  */
 exports.index = function (req, res) {
   Settings.findOne({name: 'url'}, function (err, url) {
-    console.log(arguments)
     if (err) {
       return handleError(res, err);
     }
