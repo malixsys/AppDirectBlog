@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="appDirectBlog">
+  <head>
+
+    <base href="/">
+
+    <title>App Direct Blog</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+
+    <!-- build:css app.css -->
+
+    <!-- bower:css -->
+    <!-- endinject -->
+
+    <link rel="stylesheet" href="styles/css/app.css">
+
+    <!-- endbuild -->
+
+  </head>
+  <body>
+    <div class="adb-page" class="ng-cloak" ng-if="AppStarted">
+      <header class="adb-page_header">
+        <nav-bar></nav-bar>
+      </header>
+
+      <div ng-view></div>
+    </div>
+
+    <script src="socket.io/socket.io.js"></script>
+
+    <!-- build:js app.js -->
+
+    <!-- bower:js -->
+    <script src="bower_components/jquery-1.11.3.min/index.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-socket-io/socket.js"></script>
+    <script src="bower_components/main/index.js"></script>
+    <!-- endinject -->
+
+    <!-- inject:js -->
+    <script src="app.js"></script>
+    <script src="directives/nav-bar/nav-bar.directive.js"></script>
+    <script src="services/socket/socket.service.js"></script>
+    <script src="services/auth/auth.js"></script>
+    <script src="views/admin/admin.controller.js"></script>
+    <script src="views/admin/admin.js"></script>
+    <script src="views/home/home.controller.js"></script>
+    <script src="views/home/home.js"></script>
+    <script src="views/login/login.controller.js"></script>
+    <script src="views/login/login.js"></script>
+    <script src="views/signup/signup.controller.js"></script>
+    <script src="views/signup/signup.js"></script>
+    <!-- endinject -->
+
+    <!-- endbuild -->
+
+    <script src="http://localhost:35729/livereload.js?snipver=1"></script>
+
+  </body>
+</html>

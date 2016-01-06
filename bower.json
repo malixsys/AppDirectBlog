@@ -1,0 +1,17 @@
+{
+  "name": "appDirectBlog",
+  "version": "0.1.0",
+  "dependencies": {
+    "jquery-1.11.3.min": "http://code.jquery.com/jquery-1.11.3.min.js",
+    "angular": "~1.4.7",
+    "angular-route": "~1.4.7",
+    "angular-cookies": "~1.4.7",
+    "angular-resource": "~1.4.7",
+    "angular-socket-io": "^0.7.0",
+    "main": "http://base.appdirect.com/javascripts/main.js"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.7",
+    "angular-scenario": "~1.4.7"
+  }
+}

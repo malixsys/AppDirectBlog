@@ -1,0 +1,58 @@
+<nav class="adb-primary_nav">
+  <ul class="adb-primary_nav--items adb-layout-default">
+    <li class="adb-primary_nav--item">
+      <a class="adb-primary_nav--link" title="Home" data-toggle="tooltip" data-placement="bottom" href="/">Home</a>
+
+    </li>
+
+    <li class="adb-primary_nav--item" ng-if="Auth.isLogged()">
+      <a class="adb-primary_nav--link" title="Admin" data-toggle="tooltip" data-placement="bottom" href="/admin">Admin</a>
+
+    </li>
+    <li class="adb-primary_nav--item adb-primary_nav--item__right">
+      <div class="adb-js-context_menu adb-context_menu" data-placement="right">
+        <a class="adb-context_menu--trigger adb-js-context_menu--trigger adb-primary_nav--link" role="button" tabindex="0">
+          <i class="adb-icon__cog"></i>
+          <span ng-if="Auth.isLogged()">{{ Auth.getUser().email }}</span>
+          <span ng-if="!Auth.isLogged()">Guest</span>
+        </a>
+        <div class="adb-container adb-context_menu--menu adb-js-context_menu--menu" role="menu">
+          <ul class="adb-stack">
+            <li class="adb-stack--item" ng-if="Auth.isLogged()">
+              <a class="adb-link__option adb-stack--item_content" ng-click="Auth.logout()">Log out</a>
+            </li>
+            <li class="adb-stack--item" ng-if="!Auth.isLogged()">
+              <a class="adb-link__option adb-stack--item_content" href="/login">Log in</a>
+            </li>
+            <li class="adb-stack--item" ng-if="!Auth.isLogged()">
+              <a class="adb-link__option adb-stack--item_content" href="/signup">Sign up</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </li>
+  </ul>
+</nav>
+<!--
+
+<nav>
+
+  <ul>
+    <li>
+      <a href="/">home</a>
+    </li>
+    <li ng-if="!Auth.isLogged()">
+      <a href="/signup">signup</a>
+    </li>
+    <li ng-if="!Auth.isLogged()">
+      <a href="/login">login</a>
+    </li>
+    <li ng-if="Auth.isLogged()">
+      <a href="" ng-click="Auth.logout()">logout</a>
+    </li>
+    <li>
+      <pre>logged in: {{ Auth.isLogged() }}</pre>
+    </li>
+  </ul>
+</nav>
+-->

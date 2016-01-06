@@ -1,0 +1,48 @@
+<section class="adb-layout-row adb-headline">
+  <div class="adb-layout-default">
+    <h5>Hackathon 2016</h5>
+    <h1>
+      Signup
+    </h1>
+
+    <div class="adb-container">
+      <div class="adb-container_content">
+
+        <form ng-submit="vm.signup()" class="adb-form">
+          <fieldset>
+            <div class="adb-form--field">
+              <label for="input-email">
+                Email Address
+              </label>
+              <input id="input-email" placeholder="email@address.com" type="email" ng-model="vm.user.email">
+            </div>
+            <div class="adb-form--field">
+              <label for="input-password">
+                Password
+              </label>
+              <input id="input-password" type="password" ng-model="vm.user.password">
+            </div>
+          </fieldset>
+          <menu class="adb-toolbar">
+            <button class="adb-button__primary adb-toolbar--item" type="submit">
+              Signup
+            </button>
+            <button class="adb-button__secret adb-toolbar--item" type="button" ng-click="vm.cancel()">
+              Cancel
+            </button>
+          </menu>
+        </form>
+      </div>
+      <div class="adb-container_footer">
+        <div class="adb-container_footer--item adb-container_footer--item__last">
+          <small>Already signed up? <a href="/login">Login now!</a></small>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<pre ng-if="vm.error">{{ vm.error | json }}</pre>
