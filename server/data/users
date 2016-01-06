@@ -1,3 +1,0 @@
-{"k":"0000000103","o":"0000000401","v":"001"}
-{"_id":"568d6ed315ac3f4b01e4a58e","_uid":1,"_dt":1452109523629,"_s":"244df5534fa3fb16127103cc77915992"}
-{"email":"admin@malix.com","passwordHash":"rhB7fHOrzXmFUPht1q8ri2W4I8lS8l5rEQOCiNziBrtUebSTUIuAsHmBh++JRbxrHvKkNt7rmHXEXsRys0juyQ==","salt":"CdSwdlZFPqzyh765q07wCQ==","updated":{"$wrap":"$date","v":1452109523627,"h":"2016-01-06T19:45:23.627Z"},"created":{"$wrap":"$date","v":1452109523596,"h":"2016-01-06T19:45:23.596Z"},"_id":{"$wrap":"$oid","v":"568d6ed315ac3f4b01e4a58e"},"roles":["admin"],"__v":0}

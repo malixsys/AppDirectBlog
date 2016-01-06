@@ -2,7 +2,6 @@
 
 var express = require('express');
 var compression = require('compression');
-var morgan = require('morgan');
 var path = require('path');
 var bodyParser = require('body-parser');
 
