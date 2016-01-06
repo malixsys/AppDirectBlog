@@ -30,22 +30,10 @@
             ],
             "defaultValue": "0"
         },
-        "Email Service": {
+
+        "WEBSITE_NODE_DEFAULT_VERSION": {
             "type": "string",
-            "allowedValues": [
-                "Mailgun",
-                "Gmail",
-                "SendGrid"
-            ],
-            "defaultValue": "Mailgun"
-        },
-        "Email Username": {
-            "type": "string",
-            "defaultValue": ""
-        },
-        "Email Password": {
-            "type": "string",
-            "defaultValue": ""
+            "defaultValue": "0.10.32"
         },
         "repoUrl": {
             "type": "string"

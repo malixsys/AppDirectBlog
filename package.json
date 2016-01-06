@@ -1,6 +1,7 @@
 {
   "name": "appDirectBlog",
   "version": "0.1.0",
+  "engines":{"node": "0.12.x || 0.10.x"},
   "devDependencies": {
     "apidoc": "^0.13.1",
     "del": "^2.0.2",
