@@ -1,5 +1,7 @@
 'use strict';
 
+var path = require('path');
+
 module.exports = {
   ip: process.env.IP || undefined,
   mongo: {

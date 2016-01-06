@@ -8,6 +8,7 @@ module.exports = function (io) {
     socket.ip = (socket.handshake.address) ? socket.handshake.address : null;
 
     // sockets inserts
+    require('../api/post/post.socket.js').register(socket);
 
     socket.on('disconnect', function () {
       console.log('[%s] %s disconnected.', new Date().toUTCString(), socket.ip);

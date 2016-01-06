@@ -1,0 +1,57 @@
+<section class="adb-layout-row adb-headline">
+  <div class="adb-layout-default">
+    <h5>Hackathon 2016</h5>
+    <h1>
+      Add Post
+    </h1>
+
+    <div class="adb-container">
+      <div class="adb-container_content">
+
+        <form novalidate="novalidate" name="form" ng-submit="vm.add(form)" class="adb-form">
+          <fieldset>
+            <div class="adb-form--field">
+              <label for="input-title" class="adb-label__required">
+                Title
+                <span class="adb-label--error" ng-if="form.$submitted && form.title.$error.required">Please enter a value</span>
+              </label>
+              <input name="title" id="input-title" placeholder="TITLE" type="text" ng-model="vm.post.title" required>
+            </div>
+            <div class="adb-form--field">
+              <label for="selected-app" class="adb-label__required" >App</label>
+              <div class="adb-js-dropdown adb-dropdown">
+                <select id="selected-app" name="selected-app" ng-model="vm.post.selected" ng-options="item.name for item in vm.apps" required>
+                </select>
+              </div>
+            </div>
+            <div class="adb-form--field">
+              <label class="adb-label__required">
+                Content
+              </label>
+              <textarea ng-model="vm.post.content" required name="content"></textarea>
+              <div class="adb-caption adb-form--caption" ng-if="vm.columns">
+                You can use any of the following placeholders: <br>
+                <code ng-repeat="column in vm.columns">{{'{'+'{ ' + column + ' }' + '}' }}</code>
+              </div>
+            </div>
+          </fieldset>
+          <menu class="adb-toolbar">
+            <button class="adb-button__primary adb-toolbar--item" type="submit" ng-disabled="form.$pristine" >
+              Add
+            </button>
+            <button class="adb-button__secret adb-toolbar--item" type="button" ng-click="cancel()">
+              Cancel
+            </button>
+          </menu>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+<pre >{{ (vm.post.selected || 'No app selected' )| json }}</pre>
+<pre ng-if="vm.error">{{ vm.error | json }}</pre>

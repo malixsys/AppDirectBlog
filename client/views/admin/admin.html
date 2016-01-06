@@ -4,8 +4,32 @@
     <h1>
       Admin
     </h1>
+
+    <div class="adb-container">
+      <div class="adb-container_content">
+
+        <form name="form" novalidate="novalidate" ng-submit="vm.save(form)" class="adb-form">
+          <fieldset>
+            <div class="adb-form--field">
+              <label class="adb-label__required" for="input-url">
+                URL
+                <span class="adb-label--error" ng-if="form.$submitted && form.url.$error.required">Please enter a value</span>
+                <span class="adb-label--error" ng-if="form.$submitted && form.url.$error.url">Please enter a valid URL</span>
+              </label>
+              <input name="url" id="input-url" placeholder="url" type="url" ng-model="vm.settings.url" required>
+            </div>
+          </fieldset>
+          <menu class="adb-toolbar">
+            <button class="adb-button__primary adb-toolbar--item" type="submit" ng-disabled="form.$pristine" >
+              Save
+            </button>
+            <button class="adb-button__secret adb-toolbar--item" type="button" ng-click="goto('/')">
+              Cancel
+            </button>
+          </menu>
+        </form>
+      </div>
+
+    </div>
   </div>
-</section>
-<section class="adb-layout-row">
-  <pre>{{ Auth.getUser().roles }}</pre>
 </section>

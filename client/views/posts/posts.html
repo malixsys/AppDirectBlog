@@ -1,0 +1,62 @@
+<section class="adb-layout-row adb-headline">
+  <div class="adb-layout-default">
+    <h5>Hackathon 2016</h5>
+    <h1>
+      Posts
+    </h1>
+  </div>
+</section>
+<section class="adb-layout-row">
+  <div class="adb-container">
+    <div class="adb-container_header adb-container_header__actionable">
+      <h3 class="adb-container_header--item">Posts</h3>
+      <menu class="adb-container_header--item">
+        <button class="adb-button__emphasis" type="button" ng-click="goto('/posts/add')" >
+          Add Post
+        </button>
+      </menu>
+    </div>
+    <div class="adb-container_content" ng-if="vm.posts === false">
+      <h5>None yet</h5>
+    </div>
+    <div class="adb-container_content" ng-if="vm.posts !== false">
+      <div class="adb-table adb-table__actionable">
+        <table>
+          <colgroup>
+            <col>
+            <col>
+          </colgroup>
+          <thead>
+          </thead>
+          <tbody>
+          <tr ng-repeat="post in vm.posts">
+            <td class="adb-table--card">
+              <div class="adb-table--card_text adb-summary">
+                <h3 class="adb-summary--title">
+                  {{post.title}}
+                </h3>
+                <div class="adb-summary--details">                  {{post.content}}
+                </div>
+              </div>
+            </td>
+
+            <td class="adb-table--menu">
+            <menu class="adb-toolbar adb-toolbar__small">
+              <button class="adb-button__primary adb-button__small adb-toolbar--item" type="button">
+                <i class="adb-icon__pencil"></i>
+                Edit
+              </button>
+              <button class="adb-button__danger adb-button__small adb-toolbar--item" type="button">
+                <i class="adb-icon__trash"></i>
+                Delete
+              </button>
+            </menu>
+            </td>
+          </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

@@ -56,6 +56,12 @@ angular.module('appDirectBlog', [
       }, 10);
     }
 
+    $rootScope.goto = function(url) {
+      $timeout(function(){
+        return $location.path(url);
+      }, 10);
+    };
+
     $rootScope.$on('$routeChangeStart', function (event, next) {
       Auth.isReadyLogged().then(function(){
         if(next.data && next.data.role
