@@ -16,7 +16,7 @@ process.on('SIGINT', function() {
   if (exiting) return;
   exiting = true;
   db.connection.close(function() {
-    console.log('[DB] Connection disconnected through app termination');
+    console.log('[DB]','Connection disconnected through app termination');
     process.exit(0);
   });
 });
