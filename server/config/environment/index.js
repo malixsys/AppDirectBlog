@@ -1,5 +1,7 @@
 'use strict';
 
+process.env.NODE_ENV = 'development';
+
 var path = require('path');
 var _ = require('lodash');
 var DEFAULT_PORT = 3000;
@@ -8,7 +10,7 @@ var PORT = process.env.PORT || DEFAULT_PORT;
 require('./database');
 var all = {
 
-  env: process.env.NODE_ENV || 'development',
+  env: 'development',
   root: path.normalize(__dirname + '/../../..'),
   port: PORT,
 
