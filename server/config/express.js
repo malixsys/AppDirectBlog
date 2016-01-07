@@ -23,12 +23,10 @@ module.exports = function (app) {
   app.use(compression());
   app.use(function(req, res, next){
     var chalk = require('chalk');
-    if(req.method !== 'GET') {
-      console.info(''
-        , chalk.yellow(req.method)
-        , chalk.red(req.url)
-      );
-    }
+    console.info('[REQ]'
+      , chalk.green(req.method)
+      , chalk.grey(req.url)
+    );
     next();
   });
   app.use(passport.initialize());
