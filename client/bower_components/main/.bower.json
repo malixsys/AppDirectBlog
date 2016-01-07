@@ -1,0 +1,13 @@
+{
+  "name": "main",
+  "_cacheHeaders": {
+    "Last-Modified": "Fri, 11 Dec 2015 23:36:30 GMT",
+    "Content-Length": "189036",
+    "Content-Type": "application/javascript; charset=utf-8"
+  },
+  "main": "index.js",
+  "_source": "http://base.appdirect.com/javascripts/main.js",
+  "_target": "*",
+  "_originalSource": "http://base.appdirect.com/javascripts/main.js",
+  "_direct": true
+}
