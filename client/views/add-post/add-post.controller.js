@@ -23,6 +23,14 @@ angular.module('appDirectBlog')
           return;
         }
 
+        if(!vm.post || !vm.post.selected ||  !vm.post.selected.id) {
+          return;
+        }
+
+        vm.post.appId = vm.post.selected.id;
+        delete vm.post.selected;
+
+
         Post.save(vm.post, function onOK(){
           alert('Saved!');
           return $location.path('/posts');

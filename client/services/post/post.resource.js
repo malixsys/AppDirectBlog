@@ -9,6 +9,11 @@ angular.module('appDirectBlog')
     });
 
     return angular.extend(Post, {
+      render: function() {
+        return $http.get('/api/render').then(function(response){
+          return response.data || false;
+        });
+      },
       getMetaData: function() {
         return $http.get('/api/metas').then(function(response){
           return response.data || false;

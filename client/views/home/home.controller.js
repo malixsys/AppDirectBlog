@@ -1,10 +1,20 @@
 'use strict';
 
 angular.module('appDirectBlog')
-  .controller('HomeCtrl', function () {
+  .controller('HomeCtrl', function ($q, $sce, Post) {
 
     var vm = this;
 
+    vm.posts = [];
+
+    $q.when(Post.render()).then(function(data) {
+      vm.posts =  data && data.posts && data.posts.map && data.posts.map(function(post){
+          console.log(post);
+          return $sce.trustAsHtml(post);
+        });
+    });
+
+    Post.getMetaData()
     angular.extend(vm, {
       name: 'HomeCtrl'
     });

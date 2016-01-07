@@ -37,7 +37,6 @@ exports.index = function (req, res) {
       } catch (ex) {
         return handleError(res, ex);
       }
-      res.setHeader('content-type', 'text/json');
     })
   })
 };

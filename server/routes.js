@@ -10,6 +10,8 @@ module.exports = function (app) {
   app.use('/api/posts', require('./api/post'));
   app.use('/api/users', require('./api/user'));
 
+  app.use('/api/render', require('./api/renderer'));
+
   // Auth
   app.use('/auth', require('./auth'));
 
