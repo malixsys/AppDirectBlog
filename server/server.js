@@ -9,7 +9,17 @@ console.log('Loading...');
 var config = require('./config/environment');
 
 var mongoose = require('mongoose');
-mongoose.connect(config.mongo.uri, config.mongo.options);
+var db = mongoose.connect(config.mongo.uri, config.mongo.options);
+
+var exiting = false;
+process.on('SIGINT', function() {
+  if (exiting) return;
+  exiting = true;
+  db.connection.close(function() {
+    console.log('[DB] Connection disconnected through app termination');
+    process.exit(0);
+  });
+});
 
 express.static.mime.define({'application/font-woff': ['woff']});
 
