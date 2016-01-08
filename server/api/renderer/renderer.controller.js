@@ -48,7 +48,8 @@ exports.render = function (cb) {
                   description: html,
                   guid: post._id,
                   title: post.title,
-                  date: post.updated
+                  date: post.updated,
+                  url: app.url
                 };
               } catch (ex) {
                 console.error('[RENDER]', 'ERROR', ex);

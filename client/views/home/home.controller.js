@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('appDirectBlog')
-  .controller('HomeCtrl', function ($q, $sce, Post) {
+  .controller('HomeCtrl', function ($q, $sce, $window, Post) {
 
     var vm = this;
 
@@ -13,14 +13,18 @@ angular.module('appDirectBlog')
           return {
             title: post.title,
             html: $sce.trustAsHtml(post.description),
-            guid: post.guid
+            guid: post.guid,
+            url: post.url
           };
         });
     });
 
     Post.getMetaData()
     angular.extend(vm, {
-      name: 'HomeCtrl'
+      name: 'HomeCtrl',
+      open: function(post) {
+        $window.open(post.url);
+      }
     });
 
   });
