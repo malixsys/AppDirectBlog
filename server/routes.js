@@ -15,6 +15,9 @@ module.exports = function (app) {
   // Auth
   app.use('/auth', require('./auth'));
 
+
+  app.use('/atom', require('./api/atom'));
+
   app.route('/:url(api|app|bower_components|assets)/*')
     .get(function (req, res) {
       res.status(404).end();

@@ -9,6 +9,9 @@
     </p>
   </div>
 </section>
-<any ng-repeat="post in vm.posts">
-<section ng-bind-html="post"></section>
-</any>
+<section class="adb-layout-row" ng-repeat="post in vm.posts">
+  <div class="adb-layout-default">
+    <h5>{{ post.title }}</h5>
+    <div ng-bind-html="post.html"></div>
+  </div>
+</section>

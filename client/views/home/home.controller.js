@@ -10,7 +10,11 @@ angular.module('appDirectBlog')
     $q.when(Post.render()).then(function(data) {
       vm.posts =  data && data.posts && data.posts.map && data.posts.map(function(post){
           console.log(post);
-          return $sce.trustAsHtml(post);
+          return {
+            title: post.title,
+            html: $sce.trustAsHtml(post.description),
+            guid: post.guid
+          };
         });
     });
 
